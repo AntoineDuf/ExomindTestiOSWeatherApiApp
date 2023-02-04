@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wiu-no-3Qr">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -12,8 +12,8 @@
         <scene sceneID="jxt-SS-wvR">
             <objects>
                 <navigationController id="Y4K-c8-A3M" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Caj-xi-T57">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Caj-xi-T57">
+                        <rect key="frame" x="0.0" y="47" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-804" y="-39"/>
         </scene>
-        <!--Weather View Controller-->
+        <!--Météo-->
         <scene sceneID="MxX-PG-7rD">
             <objects>
                 <viewController id="wiu-no-3Qr" customClass="WeatherViewController" customModule="WeatherTestApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPt-CD-IRD">
                                 <rect key="frame" x="16" y="682" width="358" height="128"/>
                                 <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="e6F-dc-uHM">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e6F-dc-uHM">
                                         <rect key="frame" x="104" y="62" width="150" height="4"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="e6F-dc-uHM" secondAttribute="height" multiplier="75:2" id="TW1-Di-Tob"/>
@@ -116,7 +116,18 @@
                             <constraint firstItem="fPt-CD-IRD" firstAttribute="bottom" secondItem="3eL-eW-3VP" secondAttribute="bottom" id="ZPW-Ub-qTj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hNj-bD-41l"/>
+                    <navigationItem key="navigationItem" title="Météo" id="hNj-bD-41l">
+                        <barButtonItem key="leftBarButtonItem" title="Retour" id="7LF-jO-E5I">
+                            <connections>
+                                <action selector="backButton:" destination="wiu-no-3Qr" id="vMB-t5-x0t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="progressBar" destination="e6F-dc-uHM" id="1FN-35-ZJA"/>
+                        <outlet property="progressBarLabel" destination="ljU-9e-LOk" id="DGP-Yt-D6m"/>
+                        <outlet property="tableView" destination="IvX-32-eyJ" id="x9J-Ad-Yac"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="048-qp-L4a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -21,7 +21,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Commencer"/>
                                 <connections>
-                                    <segue destination="Umz-Va-kvm" kind="presentation" modalPresentationStyle="fullScreen" id="1ta-jE-0Ij"/>
+                                    <segue destination="Umz-Va-kvm" kind="presentation" modalPresentationStyle="fullScreen" id="7yE-i8-WNg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ce projet est un cas pratique qui a pour but d'afficher la météo de cinq grande ville française." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxl-XU-hOf">
@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="22" y="4"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Weather-->
         <scene sceneID="3Vr-4C-MMj">
             <objects>
-                <viewControllerPlaceholder id="Umz-Va-kvm" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Weather" id="Umz-Va-kvm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOD-is-3a4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="628" y="2"/>

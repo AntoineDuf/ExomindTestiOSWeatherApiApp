@@ -8,5 +8,15 @@
 import Foundation
 
 final class WeatherViewModel {
-    
+    var updateLoadingMessage: () -> Void = {}
+
+    private(set) var loadingMessage: String = "Nous téléchargeons les données…" {
+        didSet {
+            updateLoadingMessage()
+        }
+    }
+
+    func launchLoading() {
+        
+    }
 }
