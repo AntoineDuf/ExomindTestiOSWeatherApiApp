@@ -8,9 +8,9 @@
 import UIKit
 
 final class WeatherViewController: UIViewController {
-    @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var progressBarLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var progressBar: UIProgressView!
+    @IBOutlet private weak var progressBarLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
     private let viewModel = WeatherViewModel()
     
     override func viewDidLoad() {
@@ -33,6 +33,10 @@ private extension WeatherViewController {
             guard let self = self else { return }
             self.startLoadingDisplay()
         }
+        viewModel.reloadTableViewHandler = { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -48,4 +52,21 @@ private extension WeatherViewController {
             self.progressBar.setProgress(1.0, animated: true)
         }
     }
+}
+
+extension WeatherViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.weatherInfo.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: "\(CityWeatherTableViewCell.self)",
+            for: indexPath
+            ) as? CityWeatherTableViewCell else { fatalError() }
+        cell.configureCell(weatherInfo: viewModel.weatherInfo[indexPath.row])
+        return cell
+    }
+    
+    
 }

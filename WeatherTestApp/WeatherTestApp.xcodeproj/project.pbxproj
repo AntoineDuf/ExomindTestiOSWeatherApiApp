@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71C07AD0298ECA2B00CC434C /* CityWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C07ACF298ECA2B00CC434C /* CityWeatherTableViewCell.swift */; };
 		71CF2A0E298EA77000C48585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CF2A0D298EA77000C48585 /* AppDelegate.swift */; };
 		71CF2A10298EA77000C48585 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CF2A0F298EA77000C48585 /* SceneDelegate.swift */; };
 		71CF2A12298EA77000C48585 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CF2A11298EA77000C48585 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71C07ACF298ECA2B00CC434C /* CityWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherTableViewCell.swift; sourceTree = "<group>"; };
 		71CF2A0A298EA77000C48585 /* WeatherTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CF2A0D298EA77000C48585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71CF2A0F298EA77000C48585 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				71CF2A28298EAE8000C48585 /* Weather.storyboard */,
 				71CF2A2A298EAF0600C48585 /* WeatherViewController.swift */,
 				71CF2A2C298EAF3B00C48585 /* WeatherViewModel.swift */,
+				71C07ACF298ECA2B00CC434C /* CityWeatherTableViewCell.swift */,
 			);
 			path = WeatherInterface;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				71CF2A12298EA77000C48585 /* ViewController.swift in Sources */,
 				71CF2A2B298EAF0600C48585 /* WeatherViewController.swift in Sources */,
 				71CF2A0E298EA77000C48585 /* AppDelegate.swift in Sources */,
+				71C07AD0298ECA2B00CC434C /* CityWeatherTableViewCell.swift in Sources */,
 				71CF2A2F298EB60E00C48585 /* WeatherService.swift in Sources */,
 				71CF2A10298EA77000C48585 /* SceneDelegate.swift in Sources */,
 			);

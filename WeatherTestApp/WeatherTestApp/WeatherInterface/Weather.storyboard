@@ -65,7 +65,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="PSg-t0-mwM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityWeatherTableViewCell" rowHeight="80" id="PSg-t0-mwM" customClass="CityWeatherTableViewCell" customModule="WeatherTestApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="358" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PSg-t0-mwM" id="7tn-AN-f9Q">
@@ -106,8 +106,17 @@
                                                 <constraint firstItem="rTl-yH-jIk" firstAttribute="top" secondItem="7tn-AN-f9Q" secondAttribute="top" id="n5m-mB-3YI"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityLabel" destination="Wvf-90-OWL" id="lR7-Bc-s8q"/>
+                                            <outlet property="temperatureLabel" destination="fbL-I0-wdw" id="RbP-v8-ghe"/>
+                                            <outlet property="weatherImage" destination="0eC-Vn-jdB" id="Rwa-d4-NOM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wiu-no-3Qr" id="PtR-xi-qyl"/>
+                                    <outlet property="delegate" destination="wiu-no-3Qr" id="zdR-yk-dzn"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3eL-eW-3VP"/>

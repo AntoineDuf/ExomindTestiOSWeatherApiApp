@@ -30,6 +30,8 @@ final class WeatherViewModel {
 
     var updateLoadingMessageHandler: () -> Void = {}
     var configureDisplayForLoadingHandler: () -> Void = {}
+    var reloadTableViewHandler: () -> Void = {}
+    var stopLoadingHandler: () -> Void = {}
 
     private(set) var loadingMessage: String = "Nous téléchargeons les données…" {
         didSet {
@@ -38,7 +40,7 @@ final class WeatherViewModel {
     }
     private(set) var weatherInfo: [WeatherInfo] = [] {
         didSet {
-//            Create reloadTableView()
+            reloadTableViewHandler()
         }
     }
 
@@ -71,7 +73,7 @@ final class WeatherViewModel {
             indexNetworkCall += 1
             getResults(city: cities[indexNetworkCall])
         } else {
-//            Create stopLoading()
+            stopLoadingHandler()
         }
     }
 
