@@ -15,14 +15,23 @@ final class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureViewModel()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        viewModel.launchLoading()
     }
 }
 
 private extension WeatherViewController {
     func configureViewModel() {
-        viewModel.updateLoadingMessage = { [weak self] in
+        viewModel.updateLoadingMessageHandler = { [weak self] in
             guard let self = self else { return }
             self.progressBarLabel.text = self.viewModel.loadingMessage
+        }
+        viewModel.configureDisplayForLoadingHandler = { [weak self] in
+            guard let self = self else { return }
+            self.startLoadingDisplay()
         }
     }
 }
@@ -30,5 +39,13 @@ private extension WeatherViewController {
 extension WeatherViewController {
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+}
+
+private extension WeatherViewController {
+    func startLoadingDisplay() {
+        UIView.animate(withDuration: 60) {
+            self.progressBar.setProgress(1.0, animated: true)
+        }
     }
 }

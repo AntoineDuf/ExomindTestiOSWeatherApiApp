@@ -35,14 +35,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPt-CD-IRD">
                                 <rect key="frame" x="16" y="682" width="358" height="128"/>
                                 <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e6F-dc-uHM">
-                                        <rect key="frame" x="104" y="62" width="150" height="4"/>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="e6F-dc-uHM">
+                                        <rect key="frame" x="64" y="61" width="230" height="7"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="e6F-dc-uHM" secondAttribute="height" multiplier="75:2" id="TW1-Di-Tob"/>
                                         </constraints>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljU-9e-LOk">
-                                        <rect key="frame" x="32" y="33.666666666666629" width="294" height="20.333333333333329"/>
+                                        <rect key="frame" x="32" y="32.666666666666629" width="294" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -53,6 +53,8 @@
                                     <constraint firstItem="e6F-dc-uHM" firstAttribute="centerY" secondItem="fPt-CD-IRD" secondAttribute="centerY" id="29v-dx-8Db"/>
                                     <constraint firstItem="ljU-9e-LOk" firstAttribute="leading" secondItem="fPt-CD-IRD" secondAttribute="leading" constant="32" id="40Q-57-NWu"/>
                                     <constraint firstItem="e6F-dc-uHM" firstAttribute="centerX" secondItem="fPt-CD-IRD" secondAttribute="centerX" id="M7V-50-GQH"/>
+                                    <constraint firstAttribute="trailing" secondItem="e6F-dc-uHM" secondAttribute="trailing" constant="64" id="TTo-qk-qo2"/>
+                                    <constraint firstItem="e6F-dc-uHM" firstAttribute="leading" secondItem="fPt-CD-IRD" secondAttribute="leading" constant="64" id="YGA-Gt-yL1"/>
                                     <constraint firstAttribute="height" constant="128" id="boy-1l-w6q"/>
                                     <constraint firstAttribute="trailing" secondItem="ljU-9e-LOk" secondAttribute="trailing" constant="32" id="fJs-77-aXd"/>
                                     <constraint firstItem="e6F-dc-uHM" firstAttribute="top" secondItem="ljU-9e-LOk" secondAttribute="bottom" constant="8" symbolic="YES" id="sZ5-Yo-35l"/>
