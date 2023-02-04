@@ -32,6 +32,7 @@ final class WeatherViewModel {
     var configureDisplayForLoadingHandler: () -> Void = {}
     var reloadTableViewHandler: () -> Void = {}
     var stopLoadingHandler: () -> Void = {}
+    var errorMessageHandler: () -> Void = {}
 
     private(set) var loadingMessage: String = "Nous téléchargeons les données…" {
         didSet {
@@ -43,9 +44,17 @@ final class WeatherViewModel {
             reloadTableViewHandler()
         }
     }
+    private(set) var error: String = "" {
+        didSet {
+            errorMessageHandler()
+        }
+    }
 
     func launchLoading() {
         loadingMessage = "Nous téléchargeons les données…"
+        indexMessage = 0
+        indexNetworkCall = 0
+        weatherInfo = []
         startProgressLabelTimer()
         configureDisplayForLoadingHandler()
         startNetworksCalls()
@@ -73,6 +82,10 @@ final class WeatherViewModel {
             indexNetworkCall += 1
             getResults(city: cities[indexNetworkCall])
         } else {
+            networkCallTimer?.invalidate()
+            networkCallTimer = nil
+            loadingLabelTimer?.invalidate()
+            loadingLabelTimer = nil
             stopLoadingHandler()
         }
     }
@@ -84,7 +97,7 @@ final class WeatherViewModel {
                 self.weatherInfo.append(data)
             case .failure(let error):
                 if let errorDescription = error.errorDescription {
-//                    Hanndle error and display
+                    self.error = errorDescription
                 }
             }
         }
