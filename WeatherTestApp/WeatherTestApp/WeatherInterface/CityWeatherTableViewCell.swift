@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class CityWeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
